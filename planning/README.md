@@ -40,6 +40,20 @@ Our users' typically have the responsibility of managing large groups of people.
 
 - Design two models and schema: "Department" and "Team Member"
 
+```
+const teamMemberSchema = new Schema({
+  firstName: String,
+  lastName: String,
+  email: String,
+  phoneNumber: Number 
+})
+
+const departmentSchema = new Schema({
+  dptName: String,
+  members: [teamMemberSchema]
+})
+```
+
 # Routes
 
 - GET all Department and team members data
