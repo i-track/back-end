@@ -1,5 +1,12 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost/itrack").then(()=>console.log("we're live!"))
+let mongoURL = "";
 
-module.exports = mongoose
+if (process.env.NODE_ENV === "production") {
+  mongoURL = process.env.DB_URL;
+} else {
+  mongoURL = "mongodb://127.0.0.1/back-end";
+}
+mongoose.connect(mongoURL);
+
+module.exports = mongoose;
