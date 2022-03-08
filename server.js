@@ -5,7 +5,7 @@ const cors = require('cors')
 
 
 // variable for the .env file
-const PORT = process.env .PORT
+const PORT = process.env.PORT
 
 // middleware
 const app = express()
