@@ -23,4 +23,15 @@ router.post("/", (req, res) => {
   );
 });
 
+router.put('/:id', (req, res) =>{
+  Department.findByIdAndUpdate( req.params.id, req.body, { new:true })
+  .then((department)=>{
+    res.json({
+      status: 200,
+      department:department
+    })
+  })
+});
+
+
 module.exports = router;
