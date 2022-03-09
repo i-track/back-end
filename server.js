@@ -26,7 +26,6 @@ app.use(cors());
 // });
 
 app.use('/departments', departmentsController)
-app.use('/members', teamMembersController)
 
 
 app.listen(PORT, ()=>{

@@ -12,6 +12,15 @@ router.get("/", (req, res) => {
     })))
 
   }) 
+  // this will find by name
+router.get("/query", (req, res) => {
+  Department.findOne(req.query)
+    .then((departments => res.json({
+      status: 200,
+      departments: departments,
+    })))
+    
+  }) 
 
 router.post("/", (req, res) => {
   const data = req.body;
@@ -36,6 +45,17 @@ router.put('/:id', (req, res) =>{
 
 router.delete('/:id', (req, res) => {
   Department.findByIdAndDelete(req.params.id)
+  .then((department) => {
+    console.log(req.params)
+    res.json({
+      status: 200,
+      department: department,
+    });
+  })
+});
+
+router.delete('/', (req, res) => {
+  Department.findOneAndDelete(req.query)
   .then((department) => {
     console.log(req.params)
     res.json({
