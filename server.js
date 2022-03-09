@@ -3,7 +3,7 @@ const express = require('express')
 const logger = require('morgan')
 const cors = require('cors')
 const departmentsController = require('./Controllers/departmentsController')
-// const teamMembersRoutes = require('./Controllers/teamMemembersRoutes')
+const teamMembersController = require('./Controllers/teamMembersController')
 
 
 
@@ -26,6 +26,8 @@ app.use(cors());
 // });
 
 app.use('/departments', departmentsController)
+app.use('/members', teamMembersController)
+
 
 app.listen(PORT, ()=>{
     console.log(`Listening in on port: ${PORT}`)
