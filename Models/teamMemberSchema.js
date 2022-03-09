@@ -10,4 +10,4 @@ const teamMemberSchema = new Schema ({
     dptName: {type: String, require:true} 
 });  
 
-module.exports = mongoose.module("TeamMember", teamMemberSchema)
+module.exports = teamMemberSchema

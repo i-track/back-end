@@ -1,11 +1,11 @@
 const mongoose = require("../connection");
-const TeamMember = require("./");
+const teamMemberSchema = require("./teamMemberSchema");
 
 const Schema = mongoose.Schema;
 
 const departmentSchema = new Schema({
   dptName: {type: String, require:true},
-  member: [TeamMember],
+  member: [teamMemberSchema],
 })
 
 module.exports = mongoose.model("Department", departmentSchema);
