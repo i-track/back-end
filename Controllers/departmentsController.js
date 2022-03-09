@@ -4,6 +4,13 @@ const Department = require('../Models/Department')
 
 const router = express.Router();
 
+
+Create, Read, Update, and Destroy
+
+// *****
+// READ 
+// *****
+
 router.get("/", (req, res) => {
   Department.find({})
     .then((departments => res.json({
@@ -11,7 +18,12 @@ router.get("/", (req, res) => {
       departments: departments,
     })))
 
-  }) 
+  })
+  
+  
+// *******
+// CREATE 
+// *******
 
 router.post("/", (req, res) => {
   const data = req.body;
@@ -24,6 +36,10 @@ router.post("/", (req, res) => {
   );
 });
 
+// *************
+// UPDATE 
+// ************
+
 router.put('/:id', (req, res) =>{
   Department.findByIdAndUpdate( req.params.id, req.body, { new:true })
   .then((department)=>{
@@ -33,6 +49,10 @@ router.put('/:id', (req, res) =>{
     })
   })
 });
+
+// *********
+// DELETE 
+// *********
 
 router.delete('/:id', (req, res) => {
   Department.findByIdAndDelete(req.params.id)
