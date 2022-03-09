@@ -1,4 +1,5 @@
 const express = require("express");
+const { restart } = require("nodemon");
 const Department = require('../Models/Department')
 
 const router = express.Router();
@@ -30,6 +31,17 @@ router.put('/:id', (req, res) =>{
       status: 200,
       department:department
     })
+  })
+});
+
+router.delete('/:id', (req, res) => {
+  Department.findByIdAndDelete(req.params.id)
+  .then((department) => {
+    console.log(req.params)
+    res.json({
+      status: 200,
+      department: department,
+    });
   })
 });
 
