@@ -3,8 +3,6 @@ const express = require('express')
 const logger = require('morgan')
 const cors = require('cors')
 const departmentsController = require('./Controllers/departmentsController')
-const teamMembersController = require('./Controllers/teamMembersController')
-
 
 
 

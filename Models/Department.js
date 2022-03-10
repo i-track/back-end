@@ -4,7 +4,7 @@ const teamMemberSchema = require("./teamMemberSchema");
 const Schema = mongoose.Schema;
 
 const departmentSchema = new Schema({
-  dptName: {type: String, require:true},
+  dptName: {type: String, index: {unique: true, required: true}},
   member: [teamMemberSchema],
 })
 
