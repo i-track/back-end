@@ -1,6 +1,5 @@
 const express = require("express");
-const { restart } = require("nodemon");
-const Department = require('../Models/Department')
+const Department = require('./../Models/Department')
 
 const router = express.Router();
 
