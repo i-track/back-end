@@ -4,6 +4,10 @@ const Department = require('../Models/Department')
 
 const router = express.Router();
 
+// *********************
+// READ ALL DEPARTMENTS 
+// ********************
+
 router.get("/", (req, res) => {
   Department.find({})
     .then((departments => res.json({
@@ -12,7 +16,11 @@ router.get("/", (req, res) => {
     })))
 
   }) 
-  // this will find by name
+
+  // ************************************
+  // // this will find department by name
+  // ***********************************
+
 router.get("/query", (req, res) => {
   Department.findOne(req.query)
     .then((departments => res.json({
@@ -21,6 +29,9 @@ router.get("/query", (req, res) => {
     })))
     
   }) 
+// ************************
+//   WILL ADD A DEPARTMENT 
+// ************************
 
 router.post("/", (req, res) => {
   const data = req.body;
@@ -33,6 +44,10 @@ router.post("/", (req, res) => {
   );
 });
 
+// **************
+// UPDATES BY ID
+// **************
+
 router.put('/:id', (req, res) =>{
   Department.findByIdAndUpdate( req.params.id, req.body, { new:true })
   .then((department)=>{
@@ -42,6 +57,10 @@ router.put('/:id', (req, res) =>{
     })
   })
 });
+
+// *********************
+// DELETES ONE DEPARTMENT
+// **********************
 
 router.delete('/:id', (req, res) => {
   Department.findByIdAndDelete(req.params.id)
@@ -53,6 +72,11 @@ router.delete('/:id', (req, res) => {
     });
   })
 });
+
+
+// **************************
+// DELETES DEPARTMENT BY NAME
+// **************************
 
 router.delete('/', (req, res) => {
   Department.findOneAndDelete(req.query)
