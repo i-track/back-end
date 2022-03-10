@@ -11,3 +11,4 @@ const teamMemberSchema = new Schema ({
 });  
 
 module.exports = teamMemberSchema
+
