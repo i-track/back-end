@@ -7,14 +7,24 @@ const router = express.Router();
 // READ ALL DEPARTMENTS 
 // ********************
 
-router.get("/", (req, res) => {
-  Department.find({})
-    .then((departments => res.json({
-      status: 200,
-      departments: departments,
-    })))
+// router.get("/", (req, res) => {
+//   Department.find({})
+//     .then((departments => res.json({
+//       status: 200,
+//       departments: departments,
+//     })))
 
-  }) 
+//   }) 
+
+
+  router.get("/", (req, res) => {
+    Department.find({})
+        .then((departments => res.json({
+            status: 200,
+            departments: departments
+        })))
+})
+
 
   // ************************************
   // // this will find department by name
