@@ -4,7 +4,6 @@ const teamMemberSchema = require('./teamMemberSchema')
 const Schema = mongoose.Schema;
 
 const departmentSchema = new Schema({
-    dptName: String
-})
+  dptName: {type: String, require:true}
 
 module.exports = mongoose.model("Department", departmentSchema);
