@@ -4,7 +4,11 @@ const departmentSchema = require('./Department')
 const Schema = mongoose.Schema; 
 
 const teamMemberSchema = new Schema ({
-    dptName: [departmentSchema]
+    firstName: {type: String, require:true},  
+    lastName: String, 
+    email: String, 
+    phone: Number,
+    dptName: {type: String, require:true} 
 });  
 
 module.exports = teamMemberSchema
