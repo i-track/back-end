@@ -4,7 +4,7 @@ We set the MVP foundation for how our front end will interact with our backend i
 
 # User Stories
 
-User Stories - 
+User Stories: 
 
 Our users' typically have the responsibility of managing large groups of people. They can create departments and add or delete members so that they can better understand the structure of their business.
 
@@ -14,8 +14,6 @@ Our users' typically have the responsibility of managing large groups of people.
 ## Time/Priority Matrix
 [Link](https://lucid.app/lucidchart/20cee9f2-05bd-408d-a0af-d418304b618e/edit?invitationId=inv_527c5f11-64e4-488c-a1a7-750e16eb0f28)
 
-```
-```
 ## Wireframes
 
 [Link](https://lucid.app/lucidchart/319b7100-52a0-4e76-aedb-22aec6bb6c55/edit?invitationId=inv_519047c0-c455-43b8-a8c4-8562a1c0052f)
@@ -105,6 +103,3 @@ const departmentSchema = new Schema({
 
 
 
-```
-
-```
